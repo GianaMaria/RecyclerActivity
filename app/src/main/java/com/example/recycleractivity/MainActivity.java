@@ -10,7 +10,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<String> info;
+    private List<String> users;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        info =
+        users = User.createUserList(10);
 
-        final Adapter adapter = new Adapter(info);
+        final Adapter adapter = new Adapter(users);
         recyclerView.setAdapter(adapter);
     }
 

@@ -12,15 +12,15 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
 
-    private List<String> info;
+    private List<String> users;
 
-    public Adapter(List<String> info) {
-        this.info = info;
+    public Adapter(List<String> users) {
+        this.users = users;
     }
 
     // сеттер
-    public void setInfo(List<String> info) {
-        this.info = info;
+    public void setUsers(List<String> users) {
+        this.users = users;
         notifyDataSetChanged();
     }
 
@@ -39,16 +39,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
     // наполнение данными
     @Override
     public void onBindViewHolder(@NonNull ViewHolderInfo holder, int position) {
-        holder.bind(info.get(position));
+        holder.bind(users.get(position));
     }
 
     // сколько всего элементов в списке
     @Override
     public int getItemCount() {
-        if (info == null) {
+        if (users == null) {
             return 0;
         }
-        return info.size();
+        return users.size();
     }
 
     // создание холдера
