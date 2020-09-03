@@ -12,17 +12,16 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
 
-    private List<String> users;
+    private List<User> users;
 
-    public Adapter(List<String> users) {
+    public Adapter(List<User> users) {
         this.users = users;
     }
 
-    // сеттер
-    public void setUsers(List<String> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
-        notifyDataSetChanged();
     }
+
 
     // создание ресайкла
     @NonNull
@@ -34,7 +33,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
                 LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false)
         );
     }
-
 
     // наполнение данными
     @Override
@@ -64,8 +62,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
         }
 
         // метод наполнения информацией
-        void bind(String info) {
-            textView.setText(info);
+        void bind(User users) {
+            textView.setText(users);
         }
     }
 }
