@@ -8,14 +8,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
 
-    private String[] info;
+    private List<String> info;
 
     // сеттер
-    public void setInfo(String[] info) {
+    public void setInfo(List<String> info) {
         this.info = info;
-        notifyDataSetChanged();
     }
 
     // создание ресайкла
@@ -33,7 +34,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
     // наполнение данными
     @Override
     public void onBindViewHolder(@NonNull ViewHolderInfo holder, int position) {
-        holder.bind(info[position]);
+        holder.bind(info.get(position));
     }
 
     // сколько всего элементов в списке
@@ -42,7 +43,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
         if (info == null) {
             return 0;
         }
-        return info.length;
+        return info.size();
     }
 
     // создание холдера
