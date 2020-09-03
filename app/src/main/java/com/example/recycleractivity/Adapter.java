@@ -14,9 +14,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderInfo> {
 
     private List<String> info;
 
+    public Adapter(List<String> info) {
+        this.info = info;
+    }
+
     // сеттер
     public void setInfo(List<String> info) {
         this.info = info;
+        notifyDataSetChanged();
     }
 
     // создание ресайкла

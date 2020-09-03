@@ -3,6 +3,7 @@ package com.example.recycleractivity;
 import java.util.ArrayList;
 
 public class User {
+
     private String mName;
     private boolean mInfo;
 
